@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Signup</title>
+  </head>
+
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container ratecont">
+      <h1 class="display-4">Signup now!</h1>
+      <p class="lead">Patient registration form.</p>
+      <form action="http://127.0.0.1:80/signup"  method="POST" >
+        <div class="form-group">
+            <label for="exampleInputEmail1">First name</label>
+            <input name="P_first_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your first name">
+           
+          </div>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Last name</label>
+          <input name="P_last_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Last name">
+
+        </div>
+        
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Social security number</label>
+            <input name="PSSNn" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your SSN">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your SSN with anyone else.</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input name="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address">
+  
+            <div class="form-group">
+              <label for="exampleInputEmail1">Gender</label>
+              <input name="gender" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your gender">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                <input name="user_password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your password">
+          
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Birth date</label>
+                  <input name="Bdate" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your birth date">
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Entry date</label>
+                    <input name="Edate" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your entry date">
+          
+          <br> <br>
+            <input class="btn btn-success btn-lg" type="submit" value="Submit">
+        </div>
+      </form>
+  
+    </div>
+  </div>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Admin Access</title>
+  </head>
+
+<body>
+
+
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{url_for('ad')}}">Home <span class="sr-only">(current)</span></a>
+
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+      <div class="container-fluid intro" id="Home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+      <img class="profile-picture" srcset="static\images\user.png 8x" alt="">
+      </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <h3 class="Pdata1"> Admin Access</h2>
+          <p  class="Pdata2"> Welcome to Elfoad cardiology department </p>
+        </div>
+      
+      </div>
+      
+      </div>
+
+
+
+<div class="task">
+    <div class="row">
+
+        <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+                <div class="card-header">
+                  <div class="row justify-content-center">
+                    <img  src=" static\images\surgeon.png " alt=""></div>
+                <h3 class="icons-text"> Register New Admins </h3>
+                </div>
+
+                <div class="card-body">
+
+                  <div class="container">
+
+                    <div class="booking-form">
+                      <form action="http://127.0.0.1:80/admin/Aadmin" method="POST">
+
+                        <div class="form-group">
+                          <span class="form-label">First Name</span>
+                          <input class="form-control" type="text" placeholder="First Name" name="Fname">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Last Name</span>
+                          <input class="form-control" type="text" placeholder="Last Name" name="Lname">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">SSN</span>
+                          <input class="form-control" type="number" placeholder="SSN" name="ASSN">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Password</span>
+                          <input class="form-control" type="text" placeholder="Password" name="Apass">
+                        </div>
+
+                        <div class="form-btn">
+                          <button class="btn btn-success btn-lg" type="submit">Add New Admin</button>
+                        </div>
+                      
+                    </div>
+
+                  </div>
+
+                </div>
+            </div>
+        </div>
+
+          <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <img  src="static\images\appointment.png " alt=""></div>
+                <h3 class="icons-text"> Admins Information </h3>
+              </div>
+
+                <div class="card-body">
+
+                  <div class="container">
+
+                    <table class="table table-hover">
+                      <thead>
+                      <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>SSN</th>
+                      </tr>
+                      </thead>
+                      {%for data in adminsData%}
+                      <tbody>
+                      <tr>
+                          <td>{{data.2}}</td>
+                          <td>{{data.3}}</td>
+                          <td>{{data.0}}</td>
+                      </tr>
+                      </tbody>
+                      {%endfor%}
+                  </table>
+
+                  </div>
+
+                </div>
+              </div>
+          </div>
+    </div>
+</div>
+
+
+
+
+</body>
+
+<footer id="footer">
+  
+ 
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+
+</footer>

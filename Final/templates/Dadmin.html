@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Admin Access</title>
+  </head>
+
+<body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{url_for('ad')}}">Home <span class="sr-only">(current)</span></a>
+
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+
+      <div class="container-fluid intro" id="Home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+      <img class="profile-picture" srcset="static\images\user.png 8x" alt="">
+      </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <h3 class="Pdata1"> Admin Access</h2>
+          <p  class="Pdata2"> Welcome to Elfoad cardiology department </p>
+        </div>
+      
+      </div>
+      
+      </div>
+
+
+
+<div class="task">
+  <!--1st row-->
+    <div class="row">
+
+        <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+          <div class="card">
+                <div class="card-header">
+                    <img  src=" static\images\surgeon.png " alt="">
+                <h3 class="icons-text"> Register New Doctors </h3>
+                </div>
+
+                <div class="card-body">
+
+                  <div class="container">
+
+                    <div class="booking-form">
+                      <form action="http://127.0.0.1:80/admin/Dadmin" method="POST">
+
+                        <div class="form-group">
+                          <span class="form-label">First Name</span>
+                          <input class="form-control" type="text" placeholder="First Name" name="docFname">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Last Name</span>
+                          <input class="form-control" type="text" placeholder="Last Name" name="docLname">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">SSN</span>
+                          <input class="form-control" type="number" placeholder="SSN" name="docSSN">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Password</span>
+                          <input class="form-control" type="text" placeholder="Password" name="pass">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Gender</span>
+                          <input class="form-control" type="text" placeholder="Gender" name="gender">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Birthdate</span>
+                          <input class="form-control" type="date" placeholder="Birthdate" name="Bdate">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Department ID</span>
+                          <input class="form-control" type="number" placeholder="Department ID" name="depID">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Join Date</span>
+                          <input class="form-control" type="date" placeholder="Join Date" name="jdate">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Salary</span>
+                          <input class="form-control" type="number" placeholder="Salary" name="salary">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Available Day</span>
+                          <input class="form-control" type="text" placeholder="Available Day" name="day">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">Start time</span>
+                          <input class="form-control" type="time" placeholder="Start time" name="start">
+                        </div>
+
+                        <div class="form-group">
+                          <span class="form-label">End Time</span>
+                          <input class="form-control" type="time" placeholder="End Time" name="end">
+                        </div>
+
+                        <div class="form-btn">
+                          <button class="btn btn-success btn-lg" type="submit">Add New Doctor</button>
+                        </div>
+                      
+                    </div>
+
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--2nd row-->
+    <div class=" mt-4 row">
+      <!-- 1st col-->
+      <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <img  src=" static\images\surgeon.png " alt=""> 
+                <h3>Doctors Data</h3></div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="container">
+
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>SSN</th>
+                        <th>Gender</th>
+                        <th>Birthdate</th>
+                        <th>Department ID</th>
+                        <th>Join Date</th>
+                        <th>Salary</th>
+                        <th>days</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                      </tr>
+                    </thead>
+                    {%for data in doctorsData%}
+                    <tbody>
+                      <tr>
+                        <td>{{data.0}}</td>
+                        <td>{{data.1}}</td>
+                        <td>{{data.3}}</td>
+                        <td>{{data.2}}</td>
+                        <td>{{data.9}}</td>
+                        <td>{{data.8}}</td>
+                        <td>{{data.10}}</td>
+                        <td>{{data.11}}</td>
+                        <td>{{data.5}}</td>
+                        <td>{{data.6}}</td>
+                        <td>{{data.7}}</td>
+                      </tr>
+                    </tbody>
+                    {%endfor%}
+                  </table>
+
+                </div>
+
+                
+              </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
+</body>
+
+<footer id="footer">
+  
+ 
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+
+</footer>

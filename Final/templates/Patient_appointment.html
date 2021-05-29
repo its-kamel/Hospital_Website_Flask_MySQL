@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Reservation</title>
+  </head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<img class="navi" src="static\images\ekg-monitor.png" >
+		<a class="navbar-brand" href="#">EL foad cardiology</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		  <div class="navbar-nav">
+			<a class="nav-item nav-link active" href="{{url_for('Patient_homepage')}}">Home <span class="sr-only">(current)</span></a>
+
+			
+			<a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+			<img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+	
+			
+		  </div>
+		</div>
+	  </nav>
+
+	<div id="booking" >
+		<div class="section-center">
+			<div class="container ">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5 PHeading">
+						<div class="booking-cta">
+							<h1 class="PHeading">We are here for you !</h1>
+						<br>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form">
+							<form action="http://127.0.0.1/Patient_appointment" method="POST">
+								<div class="form-group">
+									<strong>Your SSN : {{PSSN}} </strong>
+                                </div>
+                                <div class="form-group">
+									<span class="form-label">Reason</span>
+									<input class="form-control" type="text" placeholder="Reason" name="P_reason">
+                                </div>
+                                    <div class="form-group">
+                                        <span class="form-label">Select Doctor</span>
+                                        <select class="form-control" name="D_Name" >
+											<!-- Ha3mel for loop hna -->
+											{% for name in Dlist %}
+											<option>{{name}}</option>
+											{% endfor %}
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check In</span>
+											<input class="form-control" name="Entry_date" type="date" required>
+										</div>
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Time In</span>
+											<input class="form-control" name="Entry_time" type="time" required>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="btn btn-success btn-lg" type="submit">Check availability</button>
+									<!-- <button class="submit-btn">Check availability</button> -->
+								</div>
+                                <div>
+									
+										{{er_msg}}
+									 
+										
+									  
+									{{sc_msg}}
+									{{df_msg}}
+								</div>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+
+
+<div class="space">
+
+
+</div>
+
+<footer id="footer" >
+  
+	<a class="btn btn-success btn-lg" href="{{url_for('contactus')}}" role="button">Contact us</a>
+	
+	  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+	
+	</footer>
+  
+
+</html>

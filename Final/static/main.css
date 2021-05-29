@@ -1,0 +1,315 @@
+video{
+    object-fit: cover;
+    width: 140vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.content {
+
+    position:absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 40px;
+  
+}
+
+.mt-4{
+  padding:6%;
+}
+
+.space{
+  background-color: white;
+  padding:4%;
+}
+
+ 
+.navi{
+      padding: 40px;
+      margin-right:2%;
+      font-family: Montserrat;
+      font-weight: bold;
+  }
+
+
+
+#navbar{
+    text-align: center;
+  
+    color: #7579e7;
+  
+  
+}
+
+h3{
+  font-family: Montserrat;
+}
+tr{
+  font-family: Montserrat;
+  color:rgb(77, 75, 75) ;
+  font-weight: bold;
+}
+
+.profile-picture{
+    border-radius: 100%;
+  }
+  
+.intro{
+padding: 4%;
+  
+  text-align: center;
+  background-color:  #28abb9;
+  color: white;
+  }
+
+  
+.idata1{
+    margin-top: 3%;
+  }
+.icons{
+    padding:4%;
+    text-align: center;
+  }
+.icons-text{
+    padding:4%;
+  }
+.card-text{
+    font-size: small;
+    padding:3%;
+  }
+
+.task{
+    padding:6%;
+}
+
+#booking{
+    
+    padding:10%;
+    background: rgba(10, 133, 190, 0.5);
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    
+    
+    
+}
+
+
+
+.jumbotron{
+  background-color: #28abb9; 
+  width: 100%;
+  padding:6%;
+ 
+  
+ }
+ 
+ .ratecont{
+   background-color: #28abb9; 
+   font-weight: bold;
+   color: #ffffff;
+   font-family:lato;
+   font-weight: 700;
+   padding: 2%;
+ }
+ 
+ .rate {
+     float: left;
+     height: 46px;
+     padding: 0 10px;
+ }
+ .rate:not(:checked) > input {
+     position:absolute;
+     top:-9999px;
+ }
+ .rate:not(:checked) > label {
+     float:right;
+     width:1em;
+     overflow:hidden;
+     white-space:nowrap;
+     cursor:pointer;
+     font-size:30px;
+     color:#ccc;
+ }
+ .rate:not(:checked) > label:before {
+     content: '★ ';
+ }
+ .rate > input:checked ~ label {
+     color: #ffc700;    
+ }
+ .rate:not(:checked) > label:hover,
+ .rate:not(:checked) > label:hover ~ label {
+     color: #deb217;  
+ }
+ .rate > input:checked + label:hover,
+ .rate > input:checked + label:hover ~ label,
+ .rate > input:checked ~ label:hover,
+ .rate > input:checked ~ label:hover ~ label,
+ .rate > label:hover ~ input:checked ~ label {
+     color: #c59b08;
+ }
+ 
+ /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+ 
+ 
+ 
+ #footer{
+   background-color: #a6dcef;
+   text-align: center;
+   padding:2% 7% 2% ;
+   color:white;
+   font-family:  Montserrat;
+   font-weight: bold;
+ }
+ 
+ .footertxt{
+   margin-top:5%;
+ }
+ 
+ .PHeading{
+  color: rgb(255, 255, 255); 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size:60px;
+  font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: left;
+ }
+
+ .docviw{
+   padding:6%;
+ }
+
+
+ /* Chat containers */
+
+ /* Chat containers */
+ .container_comp {
+  border: 2px solid #fffd;
+  background-color: #729f94c2;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+/* samar */
+.var{
+  color: white
+}
+
+
+
+
+
+
+
+
+
+.jumbotron_scan{
+  position:relative;
+  overflow:hidden;
+  padding:6%;
+  margin-top:10px;
+  margin-bottom:20px;
+
+}
+
+.jumbotron_scan .container {
+  position:relative;
+  z-index:2;
+  padding:6%;
+ background-color:  rgba(0,0,0,0.1);
+  padding:2rem;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:3px;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+.card-text{
+
+  font-family: Montserrat;
+  color:rgb(77, 75, 75) ;
+  font-weight: bold;
+  
+}

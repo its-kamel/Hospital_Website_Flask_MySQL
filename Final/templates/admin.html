@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <a href="https://icons8.com/icon/48161/export"></a>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Admin home</title>
+    
+  </head>
+
+<body>
+    
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img class="navi" src="static\images\ekg-monitor.png" >
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{url_for('ad')}}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#task">Tasks</a>
+        <a class="nav-item nav-link" href="#Messages">Messages</a>
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+      <div class="container-fluid intro" id="Home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+      <img class="profile-picture" srcset="static\images\user.png 8x" alt="">
+      </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <h3 class="Pdata1"> Admin Access</h2>
+          <p  class="Pdata2"> Welcome to Elfoad cardiology department </p>
+        </div>
+      
+      </div>
+      
+      </div>
+
+
+
+<!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+      <!-- My variables-->
+      <var id="Tds" class="var">{{Total_dsal}}</var>
+      <var id="Ads" class="var">{{AVG_dsal}}</var>
+      <var id="Tns" class="var">{{Total_nsal}}</var>
+      <var id="Ans" class="var">{{AVG_nsal}}</var>
+
+
+      <var id="FD" class="var">{{FD}}</var>
+      <var id="MD" class="var">{{MD}}</var>
+
+      <var id="FN" class="var">{{FN}}</var>
+      <var id="MN" class="var">{{MN}}</var>
+
+      <var id="r1" class="var">{{r1}}</var>
+      <var id="r2" class="var">{{r2}}</var>
+      <var id="r3" class="var">{{r3}}</var>
+      <var id="r4" class="var">{{r4}}</var>
+      <var id="r5" class="var">{{r5}}</var>
+
+      <var id="newP" class="var">{{newP}}</var>
+      <var id="newE" class="var">{{newE}}</var>
+      <var id="newD" class="var">{{newD}}</var>
+
+
+
+<div class="task" id="task">
+    <!--1st row-->
+    <div class="row ">
+        <!-- 1st col-->
+        <div class=" cardcol col-lg-4 col-md-4 col-sm-12">
+          <div class="card">
+                <div class="card-header">
+                  <div class="row justify-content-center">
+                    <img  src="static\images\add-user.png" alt=""> </div>
+                </div>
+
+                <div class="card-body">
+
+                  <div class="row justify-content-center">
+                    <a class="btn btn-success btn-lg" href="http://127.0.0.1:80/admin/Dadmin" role="button">Sign up Doctor</a>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+        <!-- 2nd col-->
+        <div class=" cardcol col-lg-4 col-md-4 col-sm-12 ">
+            <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <img  src="static\images\add-user.png" alt=""> </div>
+              </div>
+              <div class="card-body ">
+
+                <div class="row justify-content-center">
+                  <a class="btn btn-success btn-lg" href="http://127.0.0.1:80/admin/Nadmin" role="button">Sign up Nurse</a>
+                </div> 
+              </div>
+            </div>
+        </div>
+
+        <!-- 3rd col-->
+        <div class=" cardcol col-lg-4 col-md-4 col-sm-12 ">
+          <div class="card">
+            <div class="card-header">
+              <div class="row justify-content-center">
+                <img  src="static\images\add-user.png" alt=""> </div>
+            </div>
+            <div class="card-body ">
+
+              <div class="row justify-content-center">
+                <a class="btn btn-success btn-lg" href="http://127.0.0.1:80/admin/Aadmin" role="button">Sign up Admin</a>
+              </div> 
+            </div>
+          </div>
+      </div>
+
+    </div> <!-- end of 1st row-->
+
+
+    <!--2nd row-->
+    <div class=" mt-4 row">
+      <!-- 1st col-->
+      <div class=" cardcol col-lg-4 col-md-4 col-sm-12">
+        <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <img  src="static\images\remove-user.png" alt=""> </div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row justify-content-center">
+                  <a class="btn btn-success btn-lg" href="http://127.0.0.1:80/admin/Rdoctor" role="button">Unregister Doctor</a>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- 2nd col-->
+      <div class=" cardcol col-lg-4 col-md-4 col-sm-12 ">
+          <div class="card">
+            <div class="card-header">
+              <div class="row justify-content-center">
+                <img  src="static\images\remove-user.png" alt=""> </div>
+            </div>
+            <div class="card-body ">
+
+              <div class="row justify-content-center">
+                <a class="btn btn-success btn-lg" href="http://127.0.0.1:80/admin/Rnurse" role="button">Unregister Nurse</a>
+              </div> 
+            </div>
+          </div>
+      </div>
+
+      <!-- 3rd col-->
+      <div class=" cardcol col-lg-4 col-md-4 col-sm-12 ">
+        <div class="card">
+          <div class="card-header">
+            <div class="row justify-content-center">
+              <img  src="static\images\remove-user.png" alt=""> </div>
+          </div>
+          <div class="card-body ">
+
+            <div class="row justify-content-center">
+              <a class="btn btn-success btn-lg" href="http://127.0.0.1:80/admin/Radmin" role="button">Unregister Admin</a>
+            </div> 
+          </div>
+        </div>
+    </div>
+
+  </div> <!-- end of 2nd row-->
+
+    <!--3nd row-->
+  <div class=" mt-4 row">
+      <!-- 1st col-->
+      <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+        <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <h3>Ratings </h3> </div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row justify-content-center">
+
+                  <!-- graph -->
+                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                  <script type="text/javascript">
+                    google.charts.load("current", {packages:["corechart"]});
+                    google.charts.setOnLoadCallback(drawChart);
+                    var r1 = parseInt(document.getElementById("r1").innerHTML)
+                    var r2 = parseInt(document.getElementById("r2").innerHTML)
+                    var r3 = parseInt(document.getElementById("r3").innerHTML)
+                    var r4 = parseInt(document.getElementById("r4").innerHTML)
+                    var r5 = parseInt(document.getElementById("r5").innerHTML)
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                        ['stars', 'Value'],
+                        ['5 Stars', r5],
+                        ['4 Stars', r4],
+                        ['3 Stars', r3],
+                        ['2 Stars', r2],
+                        ['1 Star',  r1]
+                      ]);
+              
+                      var options = {
+                        title: 'Our Clients Feedback',
+                        is3D: true,
+                      };
+              
+                      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                      chart.draw(data, options);
+                    }
+                  </script>
+                <!--chart div-->
+                  <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+
+
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- 2nd col-->
+      <div class=" cardcol col-lg-6 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <h3>Financial Analysis Cardiology Department</h3> </div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row justify-content-center">
+
+                  <!-- graph -->
+                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                  <script type="text/javascript">
+                    google.charts.load("current", {packages:['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+                    // my variables
+                    var Tds = parseInt(document.getElementById("Tds").innerHTML)
+                    var Ads = parseInt(document.getElementById("Ads").innerHTML)
+                    var Tns = parseInt(document.getElementById("Tns").innerHTML)
+                    var Ans = parseInt(document.getElementById("Ans").innerHTML)
+
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                        ["Element", "EGP", { role: "style" } ],
+                        ["Avg nurse Salary", Ans, "#cffffe"],
+                        ["Total nurse Salary", Tns, "silver"],
+                        ["Avg doctor Salary", Ads, "#2fc4b2"],
+                        ["Total doctor Salary", Tds, "color: #120078"]
+                      ]);
+                
+                      var view = new google.visualization.DataView(data);
+                      view.setColumns([0, 1,
+                                       { calc: "stringify",
+                                         sourceColumn: 1,
+                                         type: "string",
+                                         role: "annotation" },
+                                       2]);
+                
+                      var options = {
+                        title: "Average and Total Salaries",
+                        width: 600,
+                        height: 400,
+                        bar: {groupWidth: "95%"},
+                        legend: { position: "none" },
+                      };
+                      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                      chart.draw(view, options);
+                  }
+                  </script>
+                  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+
+                </div>
+                <br><br>
+              </div>
+        </div>
+      </div>
+  </div> <!--end of 3rd row-->
+
+
+
+<!--4th row-->
+<div class=" mt-4 row">
+  <!-- 1st col-->
+  <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+    <div class="card">
+          <div class="card-header">
+            <div class="row justify-content-center">
+              <h3>Doctors Gender Distribution </h3> </div>
+          </div>
+
+          <div class="card-body">
+
+            <div class="row justify-content-center">
+
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+                // var
+                var FD = parseInt(document.getElementById("FD").innerHTML)
+                var MD = parseInt(document.getElementById("MD").innerHTML)
+
+                function drawChart() {
+
+                  var data = google.visualization.arrayToDataTable([
+                    ['Gender', 'Count'],
+                    ['Male', MD],
+                    ['Female',FD]
+                  ]);
+
+                  var options = {
+                    title: 'Female to male %'
+                  };
+
+                  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                  chart.draw(data, options);
+                }
+              </script>
+              
+              <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+
+
+            </div>
+          </div>
+    </div>
+  </div>
+
+  <!-- 2nd col-->
+  <div class=" cardcol col-lg-6 col-md-6 col-sm-12 ">
+    <div class="card">
+          <div class="card-header">
+            <div class="row justify-content-center">
+              <h3>Nurses Gender Distribution </h3> </div>
+          </div>
+
+          <div class="card-body">
+
+            <div class="row justify-content-center">
+
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                  google.charts.load("current", {packages:["corechart"]});
+                  google.charts.setOnLoadCallback(drawChart);
+
+                  // var
+                var FN = parseInt(document.getElementById("FN").innerHTML)
+                var MN = parseInt(document.getElementById("MN").innerHTML)
+                  function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                      ['Task', 'Hours per Day'],
+                      ['Male',   MN],
+                      ['Female',FN]
+                    ]);
+
+                    var options = {
+                      title: 'Female/Male Ratio',
+                      pieHole: 0.4,
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                    chart.draw(data, options);
+                  }
+                </script>
+
+                <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+
+
+            </div>
+          </div>
+    </div>
+  </div>
+</div> <!--end of 5th row-->
+
+    <!--2nd row-->
+    <div class=" mt-4 row">
+      <!-- 1st col-->
+      <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+        <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <h3>Current Year Entries</h3> </div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row justify-content-center">
+                  
+                  <script type="text/javascript">
+                    google.charts.load("current", {packages:["corechart"]});
+                    google.charts.setOnLoadCallback(drawChart);
+                    // my var
+                    var newP = parseInt(document.getElementById("newP").innerHTML)
+                    var newE = parseInt(document.getElementById("newE").innerHTML)
+                    var newD = parseInt(document.getElementById("newD").innerHTML)
+                    
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                        ["Entry", "Value", { role: "style" } ],
+                        ["New Doctors", newD , "#cffffe"],
+                        ["First Time Patients", newP, "#2fc4b2"],
+                        ["Number of examinations", newE, "color: #120078"]
+                      ]);
+                      var view = new google.visualization.DataView(data);
+                      view.setColumns([0, 1,
+                                       { calc: "stringify",
+                                         sourceColumn: 1,
+                                         type: "string",
+                                         role: "annotation" },
+                                       2]);
+                
+                      var options = {
+                        title: "This Year's Data",
+                        width: 600,
+                        height: 400,
+                        bar: {groupWidth: "95%"},
+                        legend: { position: "none" },
+                      };
+                      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+                      chart.draw(view, options);
+                  }
+                  </script>
+                  <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+
+
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- 2nd col-->
+      <div class=" cardcol col-lg-6 col-md-6 col-sm-12 ">
+          <div class="card">
+            <div class="card-header">
+              <div class="row justify-content-center">
+                <h3>Accredited by:</h3> </div>
+            </div>
+            <div class="card-body ">
+
+              <div class="row justify-content-center">
+
+                <img  src="static\images\logo.png" alt="" width="300px" height="300px">
+                
+              </div> 
+            </div>
+          </div>
+      </div>
+
+
+
+  </div> <!-- end of 5th row-->
+
+    <!--6th row-->
+    <div class=" mt-4 row">
+      <!-- 1st col-->
+      <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <h3>Suppliers Information</h3></div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row justify-content-center">
+
+                  <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th> Name</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>Phone number </th>
+                        <th>Country Code</th>
+                        <th>Country</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>EgyCardio</td>
+                        <td>36 El-Batal Ahmed Abd El-Aziz St.,Mohandessin</td>
+                        <td> Giza</td>
+                        <td>27606399</td>
+                        <td>+20</td>
+                        <td>Egypt</td>
+                    </tr>
+                    <tr>
+                      <td>medicare</td>
+                      <td>18 Jacoub Artin St., Ismaileya Sq.</td>
+                      <td>Heliopolis</td>
+                      <td>024155558</td>
+                      <td>+20</td>
+                      <td>Egypt</td>
+                  </tr>
+                  <tr>
+                    <td>Atech</td>
+                    <td> 5 El-Messaha Sq.; 6th Floor; Flat 64,Dokki</td>
+                    <td> Giza</td>
+                    <td>027616827</td>
+                    <td>+20</td>
+                    <td>Egypt</td>
+                </tr>
+                <tr>
+                  <td>Medisave</td>
+                  <td> 78 Mounthoolie Lane</td>
+                  <td> Sutton Maddock</td>
+                  <td>562370137</td>
+                  <td>+44</td>
+                  <td>United Kingdom</td>
+              </tr>
+                    </tbody>
+                </table>
+
+                  </div>
+
+                  
+                </div>
+              </div>
+        </div>
+      </div>
+
+  </div> <!-- end of 6th row-->
+
+
+
+
+
+
+  <div class="jumbotron jumbotron-fluid" id="Messages">
+    <div class="container ratecont">
+      <h1 class="display-4">View patients messages!</h1>
+      <p class="lead">Please make sure to response as soon as possible.</p>
+
+     <br><br>
+      <a class="btn btn-success btn-lg" href="{{url_for('complain_cont')}}" role="button">View messages</a>
+    </div>
+  </div>
+
+</div>
+
+
+  
+  
+
+
+
+
+
+
+</body>
+
+<footer id="footer">
+  
+ 
+    <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+  </footer>
+
+ 
+

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Admin Access</title>
+  </head>
+
+<body>
+
+
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{url_for('ad')}}">Home <span class="sr-only">(current)</span></a>
+
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+      <div class="container-fluid intro" id="Home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+      <img class="profile-picture" srcset="static\images\user.png 8x" alt="">
+      </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <h3 class="Pdata1"> Admin Access</h2>
+          <p  class="Pdata2"> Welcome to Elfoad cardiology department </p>
+        </div>
+      
+      </div>
+      
+      </div>
+
+
+
+<div class="task">
+    <div class="row">
+
+        <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+          <div class="card">
+                <div class="card-header">
+                    <h3>Remove Nurse</h3>
+                </div>
+
+                <div class="card-body">
+
+                  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+                    <fieldset>
+                    
+                    <!-- nurse SSN input-->
+                    
+                    <div class="form-group" action="http://127.0.0.1:80//admin/Rnurse" method="POST">
+                      <label class="col-md-4 control-label" >SSN</label> 
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="nsn" placeholder="Enter nurse SSN to delete" class="form-control"  type="number">
+                        </div>
+                      </div>
+                      <br><br>
+                      <button class="btn btn-success btn-lg" type="submit">Delete</button>
+                    </div>
+                    
+                    
+                    
+                    </fieldset>
+                    </form>
+
+                
+
+                </div>
+            </div>
+        </div>
+
+ 
+    </div>
+</div>
+
+
+
+
+</body>
+
+<footer id="footer">
+  
+ 
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+
+</footer>

@@ -1,0 +1,77 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>Upload scans</title>
+  </head>
+
+
+
+
+
+<body>
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container ratecont">
+          <h1 class="display-4">Upload your scan now!</h1>
+          <p class="lead">Beacause your comfort always matter upload your scans from home.</p>
+          <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Upload your scans here</label>
+                <strong>Files:</strong><br>
+    <input id="file-picker" type="file" name="file" accept="image/*" multiple>
+    <div id="msg"></div>
+    <br> <br>
+    <input class="btn btn-success btn-lg" type="submit" value="Upload!" id="upload-button" >
+    
+               
+              </div>
+            </div>
+        </div>
+
+    
+</form>
+</body>
+<script>
+
+    $("#file-picker").change(function(){
+
+        var input = document.getElementById('file-picker');
+
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+            if ((ext == 'jpg') || (ext == 'png'))
+            {
+                $("#msg").text("Files are supported")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+
+        }
+
+
+    } );
+
+</script>
+</html>

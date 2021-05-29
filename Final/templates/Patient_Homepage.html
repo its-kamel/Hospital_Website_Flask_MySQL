@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <a href="https://icons8.com/icon/48161/export"></a>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Patient home</title>
+    
+  </head>
+
+<body>
+    
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img class="navi" src="static\images\ekg-monitor.png" >
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#HOME">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#task">Tasks</a>
+        <a class="nav-item nav-link" href="#scaning">Upload scans</a>
+        <a class="nav-item nav-link" href="#footer">Contact us</a>
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+    
+      <div class="container-fluid intro" id="Home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+      <img class="profile-picture" srcset="static\images\user.png 8x" alt="">
+      </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <h3 class="Pdata1"> {{fname}}&nbsp{{lname}}  </h3>
+          <p  class="Pdata2"> Welcome to Elfoad cardiology department </p>
+        </div>
+      
+      </div>
+      
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="task" id="task">
+      <div class="row">
+
+        <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row justify-content-center">
+                <img  src=" static\images\surgeon.png " alt="">
+              <h3 class="icons-text"> Our doctors </h3> </div>
+            </div>
+
+            <div class="card-body">
+
+<h3 class="card-text"> View our doctors and maintain your health   <h3>
+<p class="card-text">You can check our professional doctors!</p>
+<a class="btn btn-success btn-lg" href= "{{url_for('patient_view')}}" role="button">View doctors</a>
+
+
+</div>
+</div>
+          </div>
+
+
+          <div class=" cardcol col-lg-6 col-md-12 col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <img  src="static\images\appointment.png " alt="">
+                <h3 class="icons-text"> Your appointments </h3> </div>
+              </div>
+    
+              <div class="card-body">
+    
+    <h3 class="card-text"> View your next appointments   <h3>
+    <p class="card-text"> For new appointments wait a call for confirmation </p>
+    <a class="btn btn-success btn-lg" href= "{{url_for('Patient_appointment')}}" role="button"> Book your appointments</a>
+    
+          </div>
+        </div>
+      </div>
+         
+    </div>
+  </div>
+    
+
+
+  
+
+
+
+  
+
+  <div class="jumbotron_scan jumbotron-fluid bg-dark">
+  
+    
+  
+    <div class="container text-white" id="scaning">
+  
+      <h1 class="display-4">Upload your scans </h1>
+      <p class="lead">You can view your scan or add a new scan.</p>
+      <hr class="my-4">
+      <p>With us you can receive your scan results in 24h, wait our call.</p>
+      <a class="btn btn-primary btn-lg" href= "{{url_for('upload')}}" role="button">Upload Scan</a>
+      <br> <br>
+      <a class="btn btn-primary btn-lg" href= "{{url_for('view')}}" role="button">View Scan</a>
+      <br> <br>
+<a class="btn btn-primary btn-lg " href= "{{url_for('download')}}" role="button">Download your scans on your Desktop</a>
+      
+    </div>
+    <!-- /.container -->
+    
+   
+  </div>
+  <!-- /.jumbotron -->
+  
+
+  <!-- 
+  For IE support of object-fit add this to your document
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"&gt;&lt;/script&gt;
+  -->
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+   
+  </div>
+
+
+
+        
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container ratecont">
+        <h1 class="display-4">Rate us!</h1>
+        <p class="lead">Help us to get better to serve you.</p>
+        <form action="http://127.0.0.1/Patient_Homepage" method="POST" >
+          <div class="form-group">
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label for="star1" title="text">1 star</label>
+              
+            </div>
+            <br> <br>
+              <input class="btn btn-success btn-lg" type="submit" value="Submit">
+              <!-- <button class="btn btn-success btn-lg" type="submit">Submit</button> -->
+          </div>
+        </form>
+    
+      </div>
+    </div>
+    
+        
+
+</body>
+
+
+<footer id="footer" >
+  
+  <a class="btn btn-success btn-lg" href="{{url_for('contactus')}}" role="button">Contact us</a>
+  
+    <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+  </footer>
+
+
+
+

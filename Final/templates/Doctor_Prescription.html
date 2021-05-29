@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Doctor Add Prescription</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img class="navi" src="static\images\ekg-monitor.png" >
+      <a class="navbar-brand" href="#">EL foad cardiology</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="{{url_for('Doctor_homepage')}}">Home <span class="sr-only">(current)</span></a>
+         
+          
+          <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+          <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+  
+          
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid p-3 my-3 intro" >
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <p  class="Pdata1" style="text-align: center; font-size: 40px;" > Add Prescription </p>
+        </div>
+      </div>  
+    </div>
+      
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-6" >
+            <div class="Doctor_Add_Prescription">
+                <form action="{{url_for('Doctor_Prescription')}}" method="POST">
+                    <div class="form-group">
+                        <span class="form-label">Patient ID</span>
+                        <input class="form-control" type="number" placeholder="Patient ID" name="Patient ID" required>
+                    </div>
+                    <!--<div class="form-group">
+                        <span class="form-label">Prescription Date</span>
+                        <input class="form-control" type="date" placeholder="Prescription Date" name="Prescription Date"required>
+                    </div>-->
+                    <div class="form-group">
+                        <span class="form-label">Diagnose</span>
+                        <input class="form-control" type="text" placeholder="Diagnose" name="Diagnose" required>
+                    </div>
+                    
+                    <div class="form-btn" style="text-align: center; padding-bottom: 10px;">
+                        <button class="submit-btn btn-success btn-lg " style="text-align: center; width: 300px;" href="{{url_for('Doctor_sh')}}">Submit</button>
+                    </div>
+                </form>
+                {% if condition1 == 1%}
+                <div class="alert alert-danger" role="alert">
+                  {{msg}}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer id="footer">
+  
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+</footer>

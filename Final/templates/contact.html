@@ -1,0 +1,66 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Reservation</title>
+  </head>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img class="navi"  >
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{url_for('Patient_homepage')}}">Home <span class="sr-only">(current)</span></a>
+
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container ratecont">
+      <h1 class="display-4">Get in touch!</h1>
+      <p class="lead">Beacause your comfort always matter we want to be in touch!.</p>
+      <form action="http://127.0.0.1/Patient_Homepage/contact" method="POST" >
+        <div class="form-group">
+            <label for="exampleInputEmail1">Social security number</label>
+            <input name="complpainSSN" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your SSN">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your SSN with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+            <input name="pas" type="Password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">How can we help?</label>
+            <textarea name="contact" id="contactus" cols="3" rows="4" class="form-control">Contact us here</textarea> 
+          </div>
+          
+          <br> <br>
+            <input class="btn btn-success btn-lg" type="submit" value="Submit">
+        </div>
+      </form>
+  
+    </div>
+  </div>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <a href="https://icons8.com/icon/48161/export"></a>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Doctor home</title>
+    
+  </head>
+
+<body>
+    
+    
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img class="navi" src="static\images\ekg-monitor.png" >
+    <a class="navbar-brand" href="#">EL foad cardiology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#HOME">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#task">Tasks</a>
+       
+        
+        <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+        <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+      <div class="container-fluid intro" id="Home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <img class="profile-picture" srcset="static\images\user.png 8x" alt="">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <h3 class="Pdata1"> {{D_Fname}}&nbsp{{D_Lname}}  </h2>
+            <p  class="Pdata2"> Welcome to Elfoad cardiology department </p>
+          </div>
+        </div>
+      </div>
+
+
+
+<div class="task" id="task">
+      <div class="row">
+
+        <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row justify-content-center">
+                <img  src=" static\images\your-patient.png " width="100" height="85" alt="">
+              <h3 class="icons-text"> Your patients </h3> </div>
+            </div>
+
+            <div class="card-body">
+
+<h3 class="card-text" style="margin-bottom: 0;"> View patient history <h3>
+<p class="card-text" style="margin: 0; padding-top: 0;">Add new prescription to your patiens </p>
+<p class="card-text" style="margin: 0; padding-top: 0;">You can also add new medications and medical procedures </p>
+<div class="text-center">
+  <a class="btn btn-success btn-sm" href= "{{url_for('DoctorsPatient_Examination')}}" role="button">View Patient History</a>
+  <a class="btn btn-success btn-sm" href= "{{url_for('Doctor_Prescription')}}" role="button">Add New Prescription</a>
+</div>
+
+
+</div>
+</div>
+          </div>
+
+          <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="row justify-content-center">
+                  <img  src="static\images\appointment.png " alt="">
+                <h3 class="icons-text"> Your appointments </h3> </div>
+              </div>
+  
+              <div class="card-body">
+  
+  <h3 class="card-text"> You can check your appointments   <h3>
+  <div class="text-center">
+    <a class="btn btn-success" href= "{{url_for('Doctor_Appointments')}}" role="button"> Check my appointments</a>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+</body>
+
+
+<footer id="footer">
+  
+    <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+  </footer>
+
+
+
+

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Patient History</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="navi" src="static\images\ekg-monitor.png" >
+        <a class="navbar-brand" href="#">EL foad cardiology</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{url_for('Doctor_homepage')}}">Home <span class="sr-only">(current)</span></a>
+           
+            
+            <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+            <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+    
+            
+          </div>
+        </div>
+      </nav>
+
+        <div class="row justify-content-center" style="padding-bottom: 0px;">
+            <h3 class="icons-text"> Persional Info </h3>
+        </div>
+    <div class="row">
+        <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" style="text-align: center;">First Name</th>
+                                    <th scope="col" style="text-align: center;">Last Name</th>
+                                    <th scope="col" style="text-align: center;">Enter Date</th>
+                                    <th scope="col" style="text-align: center;">Gender</th>
+                                    <th scope="col" style="text-align: center;">Birth Date</th>
+                                </tr>
+                            </thead>             
+                            <tbody class="customtable">
+                                {% for data in patient%}
+                                    <tr>
+                                        <td style="text-align: center;"> {{ data.0 }}</td>
+                                        <td style="text-align: center;"> {{ data.1 }}</td>
+                                        <td style="text-align: center;"> {{ data.2 }}</td>
+                                        <td style="text-align: center;"> {{ data.3 }}</td>
+                                        <td style="text-align: center;"> {{ data.4 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>           
+                        </table>
+                    </class=>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="row justify-content-center" style="padding-bottom: 0px;">
+        <h3 class="icons-text"> Diagnoses  </h3>
+   </div>
+
+   <div class="row">
+        <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" style="text-align: center;">Diagnose</th>
+                                    <th scope="col" style="text-align: center;">Date</th>
+
+                                </tr>
+                            </thead>             
+                            <tbody class="customtable">
+                                {% for data in diagnosesinfo %}
+                                    <tr>
+                                        <td style="text-align: center;"> {{ data.0 }}</td>
+                                        <td style="text-align: center;"> {{ data.1 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>           
+                        </table>
+                    </class=>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center" style="padding-bottom: 0px;">
+        <h3 class="icons-text"> Medications  </h3>
+   </div>
+
+    <div class="row">
+        <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" style="text-align: center;">Medication</th>
+                                    <th scope="col" style="text-align: center;">Dosage per day</th>
+                                    <th scope="col" style="text-align: center;">Start Date</th>
+                                    <th scope="col" style="text-align: center;">End date</th>
+                                </tr>
+                            </thead>             
+                            <tbody class="customtable">
+                                {% for data in medication %}
+                                    <tr>
+                                        <td style="text-align: center;"> {{ data.0 }}</td>
+                                        <td style="text-align: center;"> {{ data.1 }}</td>
+                                        <td style="text-align: center;"> {{ data.2 }}</td>
+                                        <td style="text-align: center;"> {{ data.3 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>           
+                        </table>
+                    </class=>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center" style="padding-bottom: 0px;">
+        <h3 class="icons-text"> Medical Procedures  </h3>
+   </div>
+
+    <div class="row">
+        <div class=" cardcol col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" style="text-align: center;">Date</th>
+                                    <th scope="col" style="text-align: center;">Procedure</th>
+                                    <th scope="col" style="text-align: center;">Type</th>
+                                </tr>
+                            </thead>             
+                            <tbody class="customtable">
+                                {% for data in medicalpro %}
+                                    <tr>
+                                        <td style="text-align: center;"> {{ data.0 }}</td>
+                                        <td style="text-align: center;"> {{ data.1 }}</td>
+                                        <td style="text-align: center;"> {{ data.2 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>           
+                        </table>
+                    </class=>
+                </div>
+                    
+               
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron_scan jumbotron-fluid bg-dark">
+  
+    
+  
+        <div class="container text-white" id="scaning">
+    
+          <p class="lead">Download patient scans on your Desktop</p>
+          <hr class="my-4">
+          <!--<p>With us you can receive your scan results in 24h, wait our call.</p>
+          <a class="btn btn-primary btn-lg" href= "{{url_for('upload')}}" role="button">Upload </a>-->
+    <a class="btn btn-primary btn-lg " href= "{{url_for('Doctor_download')}}" role="button">Download</a>
+    <a class="btn btn-primary btn-lg " href= "{{url_for('Doctor_homepage')}}" role="button">Back</a>
+          
+        </div>
+
+        <div class="container text-white" id="scaning">
+    
+            <p class="lead">View Patient Scan</p>
+            <hr class="my-4">
+            <!--<p>With us you can receive your scan results in 24h, wait our call.</p>
+            <a class="btn btn-primary btn-lg" href= "{{url_for('upload')}}" role="button">Upload </a>-->
+      <a class="btn btn-primary btn-lg " href= "{{url_for('Doctor_viewscan')}}" role="button">View</a>
+      <a class="btn btn-primary btn-lg " href= "{{url_for('Doctor_homepage')}}" role="button">Back</a>
+            
+          </div>
+        <!-- /.container -->
+        
+       
+      </div>
+
+</body>
+
+<footer id="footer">
+  
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+</footer>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Doctor Appointments</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img class="navi" src="static\images\ekg-monitor.png" >
+      <a class="navbar-brand" href="#">EL foad cardiology</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="{{url_for('Doctor_homepage')}}">Home <span class="sr-only">(current)</span></a>
+         
+          
+          <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+          <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+  
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-3 my-3 intro" >
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <p  class="Pdata1" style="text-align: center; font-size: 40px;" > Your schedule </p>
+        </div>
+      </div>  
+    </div>
+      
+    <div class="row justify-content-center">
+        <div class="cardcol col-md-12 col-sm-12" >
+            <div class="Doctor_view_Appointments" style="padding-bottom: 10px;">
+                <div class="card">
+                    <class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light" >
+                                <tr>
+                                    <th scope="col" style="text-align: center;">Patient Name</th>
+                                    <th scope="col" style="text-align: center;">Examination Date</th>
+                                    <th scope="col" style="text-align: center;">Examination Time</th>
+                                </tr>
+                            </thead>             
+                            <tbody class="customtable">
+                                {% for data in Appointments %}
+                                    <tr>
+                                        <td style="text-align: center;"> {{ data.0 }} &nbsp {{ data.1 }}</td>
+                                        <td style="text-align: center;"> {{ data.2 }}</td>
+                                        <td style="text-align: center;"> {{ data.3 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>           
+                        </table>
+                    </class=>
+                    <div class="text-center" style="padding-bottom: 10px;">
+                      <a class="btn btn-success btn-lg " style="text-align: center; width: 300px;" href= "{{url_for('Doctor_homepage')}}" role="button">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer id="footer">
+  
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+</footer>

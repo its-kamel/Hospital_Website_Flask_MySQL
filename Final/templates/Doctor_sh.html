@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='main.css') }}">
+    <title>Doctor Veiw Prescription</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="navi" src="static\images\ekg-monitor.png" >
+        <a class="navbar-brand" href="#">EL foad cardiology</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{url_for('Doctor_homepage')}}">Home <span class="sr-only">(current)</span></a>
+           
+            
+            <a class="nav-item nav-link" href="{{url_for('home')}}">Sign out</a>
+            <img srcset="https://img.icons8.com/nolan/64/export.png 2x"/>
+    
+            
+          </div>
+        </div>
+      </nav>
+
+    <div class="container-fluid p-3 my-3 intro" >
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <p  class="Pdata1" style="text-align: center; font-size: 40px;" > Prescription Data </p>
+        </div>
+      </div>  
+    </div>
+      
+    <div class="row justify-content-center">
+        <div class="cardcol col-lg-6 col-md-6 col-sm-12" >
+            <div class="Doctor_View_Prescription_Data">
+                <div class="card">
+                    <class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light" >
+                                <tr>
+                                    <th scope="col" style="text-align: center;">Prescription Date</th>
+                                    <th scope="col" style="text-align: center;">Diagnose</th>
+                                </tr>
+                            </thead>             
+                            <tbody class="customtable">
+                                {% for data in Prescriptions %}
+                                    <tr>
+                                        <td style="text-align: center;"> {{ data.0 }}</td>
+                                        <td style="text-align: center;"> {{ data.1 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>           
+                        </table>
+                    </class=>
+                    <div class="text-center" style="padding-bottom: 10px;">
+                        <a class="btn btn-success btn-lg " style="text-align: center; width: 300px;" href= "{{url_for('Doctor_homepage')}}" role="button">Done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task">
+        <div class="row">
+            <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row justify-content-center">
+                            <h3 class="icons-text"> Patient Medications </h3> </div>
+                        </div>
+                        <div class="card-body">
+                            <class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col" style="text-align: center;">#</th>
+                                            <th scope="col" style="text-align: center;">Medicine Name</th>
+                                            <th scope="col" style="text-align: center;">Dosage Per Day</th>
+                                            <th scope="col" style="text-align: center;">Start Date</th>
+                                            <th scope="col" style="text-align: center;">End Date</th>
+                                        </tr>
+                                    </thead>             
+                                    <tbody class="customtable">
+                                        {% for data in Medications %}
+                                            <tr>
+                                                <th scope="row" style="text-align: center;">{{loop.index}}</th>
+                                                <td style="text-align: center;"> {{ data.0 }}</td>
+                                                <td style="text-align: center;"> {{ data.1 }}</td>
+                                                <td style="text-align: center;"> {{ data.2 }}</td>
+                                                <td style="text-align: center;"> {{ data.3 }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>           
+                                </table>
+                            </class=>
+                            <div class="text-center">
+                                <a class="btn btn-success btn-lg" style="text-align: center; width: 300px;" href= "{{url_for('Doctor_Medications')}}" role="button">Add New Medications</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" cardcol col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row justify-content-center">
+                                <h3 class="icons-text"> Patient Medical Procedures</h3> </div>
+                            </div>
+                            <div class="card-body">
+                                <class="table-responsive">
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col" style="text-align: center;">#</th>
+                                                <th scope="col" style="text-align: center;">Medical Procedure Name</th>
+                                                <th scope="col" style="text-align: center;">Medical Procedure Type</th>
+                                            </tr>
+                                        </thead>             
+                                        <tbody class="customtable">
+                                            {% for data in  Medicalprocedures %}
+                                                <tr>
+                                                    <th scope="row" style="text-align: center;">{{loop.index}}</th>
+                                                    <td style="text-align: center;"> {{ data.0 }}</td>
+                                                    <td style="text-align: center;"> {{ data.1 }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>           
+                                    </table>
+                                </class=>
+                                <div class="text-center">
+                                    <a class="btn btn-success btn-lg" style="text-align: center; width: 300px;" href= "{{url_for('Doctor_Medicalprocedures')}}" role="button"> Add New Medical Procedures</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer id="footer">
+  
+  <p class="footertxt">© Copyright 2021 Elfoad cardiology</p>
+  
+</footer>
+
